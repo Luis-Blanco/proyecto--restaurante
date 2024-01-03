@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>GitHub</title>
-      <link rel="stylesheet" href="estilos.css" />
+      <title>World Pizza</title>
+      <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+      <link rel="stylesheet" href="css/estilos.css" />
+      <link rel="stylesheet" href="lib/fontawesome/css/all.min.css" />
    </head>
    <body>
-      <h1>Probando la conexion con github</h1>
-      <header>
-         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Galeria</a>
-            <a href="#">Contactos</a>
-         </nav>
-      </header>
+      <!-- MENU PRINCIPAL -->
+      <main class="principal">
+         <section class="principal__logo">
+            <img src="img/logo.png" alt="logo de la empresa" />
+         </section>
+
+         <section class="principal__menuBar">
+            <i class="fas fa-angle-right btn__menuClose"></i>
+
+            <nav class="principal__enlaces">
+               <ul>
+                  <li><a href="">Servicios</a></li>
+                  <li><a href="">Equipo</a></li>
+                  <li><a href="">Contacto</a></li>
+               </ul>
+            </nav>
+
+            <section class="principal__sociales">
+               <a href=""><span class="fab fa-facebook"></span></a>
+               <a href=""><span class="fab fa-instagram"></span></a>
+               <a href=""><span class="fab fa-twitter"></span></a>
+               <a href=""><span class="fab fa-youtube"></span></a>
+            </section>
+         </section>
+         <i class="fas fa-bars btn__menuOpen"></i>
+      </main>
+
+      <script src="js/app.js"></script>
    </body>
 </html>
