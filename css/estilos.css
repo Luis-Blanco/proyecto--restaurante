@@ -177,7 +177,7 @@ body {
 .menuProductos--slider {
    display: flex;
    overflow: hidden;
-   height: calc(100vh -80px);
+   height: calc(100vh - 80px);
    /*Nos ayuda a realizar una leve transicion* al pasar a otra producto*/
    scroll-behavior: smooth;
 }
@@ -331,11 +331,142 @@ body {
    padding: 20px;
 }
 
-/* MEDIA QUERY PARA LA BARRA DE NAVEGACION */
+/* SECCION DE EQUIPO */
+.equipo {
+   height: 100vh;
+   display: flex;
+}
 
-/* SLIDER DE PRODUCTOS */
+.equipo--persona {
+   flex-grow: 1;
+   overflow: hidden;
+   position: relative;
+   transition: all 0.5s;
+}
+
+.equipo--persona:hover {
+   flex-grow: 3;
+}
+
+.equipo--personaImagen {
+   height: 100%;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   filter: grayscale(80%);
+}
+
+.equipo--persona .equipo--personaImagen:hover {
+   filter: grayscale(0%);
+}
+
+.equipo--personaInfo {
+   position: absolute;
+   bottom: 10px;
+   width: 100%;
+   text-align: center;
+   opacity: 0;
+   transition: all 0.2s;
+}
+
+.equipo--persona:hover .equipo--personaInfo {
+   opacity: 1;
+   bottom: 70px;
+   transition-delay: 0.4s;
+}
+
+.equipo--personaInfo h2 {
+   font-size: 30px;
+   color: #000;
+   font-weight: 600;
+   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.equipo--personaInfo p {
+   color: var(--color-secundario);
+   font-size: 20px;
+   font-weight: 700;
+   font-style: italic;
+   margin-top: 8px;
+   margin-bottom: 20px;
+   text-shadow: 2px 2px 3px rgba(255, 0, 0, 0.5);
+}
+
+.equipo--socialMedia a {
+   display: inline-block;
+   width: 40px;
+   height: 40px;
+   color: #fff;
+   background: var(--color-secundario);
+   line-height: 40px;
+   border-radius: 50%;
+   margin: 0 5px;
+   font-size: 18px;
+   cursor: pointer;
+   transition: all 0.5s;
+}
+
+.equipo--socialMedia a:hover {
+   color: var(--color-secundario);
+   background: transparent;
+   transform: scale(2);
+}
+
+/* SECCIONES INGREDIENTES */
+.ingredientes {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.ingredientes--contenedor {
+   flex-grow: 1;
+   overflow: hidden;
+   position: relative;
+   height: 250px;
+}
+
+.ingredientes--imagen {
+   position: absolute;
+   height: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.ingredientes--info {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   transition: all 0.4s;
+}
+
+.ingredientes--info p,
+.ingredientes--info p span {
+   font-size: 28px;
+   color: #fff;
+   font-weight: 600;
+   transition: all 0.4s;
+}
+
+.ingredientes--info:hover {
+   background: rgba(0, 0, 0, 0.25);
+}
+
+.ingredientes--info:hover p {
+   transform: translateY(10px);
+}
+
+/* =========================================================================
+            MEDIA QUERY PARA LA BARRA DE NAVEGACION 
+============================================================================*/
 
 @media screen and (max-width: 850px) {
+   /* SLIDER DE PRODUCTOS */
    .menuProductos--contenedorProductos {
       flex-direction: column;
    }
@@ -351,9 +482,20 @@ body {
    .menuProductos--descripcion .btn:hover {
       padding: 10px 30px;
    }
-}
 
-/* BARRA DE NAVEGACION */
+   /* SECCION SERVICIOS*/
+   .servicios--contenedor {
+      margin-top: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+         "ingredientes        rapidez"
+         "calidad             delivery";
+   }
+
+   .imagenCentral {
+      display: none;
+   }
+}
 
 @media screen and (max-width: 650px) {
    /* BARRA DE NAVEGACION */
@@ -418,5 +560,10 @@ body {
 
    .menuProductos--imagenProductos {
       width: 65%;
+   }
+
+   /* SECCION INGREDIENTES */
+   .ingredientes--info .ingredientes--texto {
+      display: none;
    }
 }
