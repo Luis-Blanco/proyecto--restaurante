@@ -312,6 +312,70 @@
          </div>
       </section>
 
+      <!-- SECCION DE CONTACTOS -->
+      <section class="contacto">
+         <div class="contacto--titulo">
+            <h2 class="subtitulo">Queremos conocer tu opinion</h2>
+            <h1 class="titulo">contactanos</h1>
+         </div>
+
+         <form action="" class="formulario">
+            <div class="formulario--dosCampos">
+               <div class="inputConIcon">
+                  <input
+                     type="text"
+                     name="nombre"
+                     class="input--text"
+                     placeholder="Nombre"
+                  />
+                  <i class="fas fa-user"></i>
+               </div>
+
+               <div class="inputConIcon">
+                  <input
+                     type="email"
+                     name="email"
+                     class="input--email"
+                     placeholder="Email"
+                  />
+                  <i class="fas fa-envelope"></i>
+               </div>
+            </div>
+
+            <div class="fiels">
+               <div class="inputConIcon textareaIcon">
+                  <textarea
+                     name="comentarios"
+                     id=""
+                     cols="30"
+                     rows="10"
+                     class="textarea"
+                     placeholder="Ingrese su mensaje"
+                  ></textarea>
+                  <i class="fas fa-comment"></i>
+               </div>
+            </div>
+
+            <div class="fiels-btn">
+               <input type="submit" value="Enviar" class="btn btn-input" />
+            </div>
+         </form>
+      </section>
+
+      <!-- ALERTAS -->
+      <div class="alertas">
+         <div class="alerta--error hide">
+            <span><i class="fas fa-exclamation-circle icono-alert"></i></span>
+            <span class="alerta--mensaje">Error: campos de entrada vacios</span>
+         </div>
+
+         <div class="alerta--success hide">
+            <span><i class="fas fa-check-circle icono-alert"></i></span>
+            <span class="alerta--mensaje"
+               >¡Datos enviados! Gracias por contactarnos</span
+            >
+         </div>
+      </div>
       <script src="js/app.js"></script>
    </body>
 </html>

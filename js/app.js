@@ -34,3 +34,46 @@ btnDerecha.addEventListener("click", function () {
 btnIzquierdo.addEventListener("click", function () {
    contenedor.scrollLeft -= contenedor.offsetWidth;
 });
+
+/* SECCION DE CONTACTO Y VALIDACION DE FORMULARIO */
+
+let formulario = document.querySelector(".formulario");
+
+function validar(e) {
+   var inputNombre = document.querySelector(".input--text"),
+      inputEmail = document.querySelector(".input--email"),
+      inputComentario = document.querySelector(".textarea"),
+      alertError = document.querySelector(".alerta--error"),
+      alertSuccess = document.querySelector(".alerta--success");
+
+   if (
+      inputNombre.value == 0 ||
+      inputEmail.value == 0 ||
+      inputComentario.value == 0
+   ) {
+      e.preventDefault();
+      alertError.classList.remove("hide");
+      alertError.classList.add("show");
+      setTimeout(function () {
+         alertError.classList.remove("show");
+         alertError.classList.add("hide");
+      }, 2000);
+   } else {
+      e.preventDefault();
+
+      alertSuccess.classList.remove("hide");
+      alertSuccess.classList.add("show");
+      setTimeout(function () {
+         alertSuccess.classList.remove("show");
+         alertSuccess.classList.add("hide");
+      }, 2000);
+
+      inputNombre.value = "";
+      inputEmail.value = "";
+      inputComentario.value = "";
+   }
+}
+
+//EVENTOS DEL FORMULARIO
+
+formulario.addEventListener("submit", validar);
