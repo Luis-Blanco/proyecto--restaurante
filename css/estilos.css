@@ -623,6 +623,57 @@ body {
 .alerta--success .alerta--mensaje {
    color: #155724;
 }
+
+/* SECCION FOOTER */
+
+.footer {
+   display: flex;
+   margin-top: -100px;
+}
+
+.footer--sociales {
+   width: 25%;
+   height: 100px;
+   background: #333;
+   color: #fff;
+   position: relative;
+   text-align: center;
+   overflow: hidden;
+}
+
+.footer--sociales i {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   font-size: 30px;
+   line-height: 100px;
+   transition: all 0.5s;
+}
+
+.footer--sociales span {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   bottom: 0;
+   padding: 10px 0;
+   font-size: 12px;
+   background: var(--color-primario);
+   color: #fff;
+   letter-spacing: 1px;
+   font-weight: 700;
+   transform: translateY(60px);
+   transition: all 0.5s;
+}
+/*le aplicare el estilo al span*/
+.footer--sociales i:hover + span {
+   transform: translateY(0px);
+}
+
+.footer--sociales i:hover {
+   transform: translateY(-20px);
+}
 /* =========================================================================
             MEDIA QUERY PARA LA BARRA DE NAVEGACION 
 ============================================================================*/
@@ -750,5 +801,15 @@ body {
 
    .show {
       transform: translateY(150%);
+   }
+
+   /* SECCION FOOTER */
+   .footer {
+      flex-wrap: wrap;
+      margin-top: 0;
+   }
+
+   .footer--sociales {
+      width: 50%;
    }
 }
